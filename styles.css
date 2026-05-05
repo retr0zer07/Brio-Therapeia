@@ -40,7 +40,7 @@ body {
 }
 
 .narrow {
-  width: min(860px, 100%);
+  width: min(860px, 92%);
   margin: 0 auto;
 }
 
@@ -300,7 +300,7 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
 }
 
@@ -385,7 +385,6 @@ blockquote {
   margin-left: 0;
   border-radius: 16px;
   max-height: 380px;
-  aspect-ratio: auto;
   grid-column: 1 / -1;
 }
 
@@ -436,6 +435,11 @@ blockquote {
   background: #163628;
   color: #f2f4ef;
   padding: 1.5rem 0;
+}
+
+.site-footer p,
+.site-footer a {
+  color: #f2f4ef;
 }
 
 .footer-wrap {
@@ -551,5 +555,52 @@ blockquote {
     background: transparent;
     border: 0;
     padding: 0;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1120px) {
+  .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .benefit-grid {
+    gap: 0.65rem;
+  }
+
+  /* On small phones aspect-ratio is already 4/3 (set at 980px);
+     reduce max-height to keep cards compact while preserving object-fit cover */
+  .photo-card,
+  .tall-photo,
+  .inline-photo,
+  .banner-photo {
+    aspect-ratio: 4 / 3;
+    max-height: 200px;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 6vw, 1.6rem);
   }
 }
