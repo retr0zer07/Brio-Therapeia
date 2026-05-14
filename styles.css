@@ -492,6 +492,18 @@ blockquote {
   font-weight: 700;
 }
 
+.keyword-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  columns: 2;
+  column-gap: 1.4rem;
+}
+
+.keyword-list li {
+  break-inside: avoid;
+  margin: 0 0 0.45rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -555,6 +567,11 @@ blockquote {
     background: transparent;
     border: 0;
     padding: 0;
+  }
+
+  .keyword-list {
+    columns: 1;
+    padding-left: 1rem;
   }
 }
 
