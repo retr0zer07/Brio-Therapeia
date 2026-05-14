@@ -148,6 +148,30 @@ body {
 .hero-media {
   overflow: hidden;
   border-bottom: 1px solid rgba(23, 59, 54, 0.12);
+  min-height: 70vh;
+}
+
+.hero-animated {
+  background: linear-gradient(135deg, #176b66 0%, #0a4d48 50%, #00a9a5 100%);
+}
+
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(0, 169, 165, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 122, 89, 0.15) 0%, transparent 50%);
+  z-index: 0;
+  animation: float-gradient 15s ease-in-out infinite;
+}
+
+@keyframes float-gradient {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-video {
@@ -157,6 +181,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0.9;
 }
 
 .hero-overlay {
@@ -278,6 +303,10 @@ li {
   border: 1px solid var(--line);
   background: rgba(13, 44, 40, 0.08);
   aspect-ratio: 16 / 9;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-frame video {
@@ -285,6 +314,30 @@ li {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(23, 107, 102, 0.1), rgba(0, 169, 165, 0.1));
+  color: #1a4d3e;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.video-placeholder svg {
+  width: 60px;
+  height: 60px;
+  color: var(--ink-soft);
+}
+
+.video-placeholder p {
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .video-note {
